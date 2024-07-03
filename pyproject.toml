@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curve-fitting"
+description = "Curve fitting tool"
+authors = [
+    {name = "Hailin Wang", email = "hailin.wang@connect.polyu.hk"},
+]
+dependencies = [
+    "cma",
+    "numpy",
+    "scipy",
+    "sympy",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+dynamic = ["version"]
+license = {text = "MIT"}
+
+[tool.pdm]
+package-type = "library"
+
+[tool.setuptools_scm]
+root = "."
+version_scheme = "post-release"
+fallback_version = "0.0.1"
