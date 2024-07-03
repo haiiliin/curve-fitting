@@ -19,6 +19,9 @@ readme = "README.md"
 dynamic = ["version"]
 license = {text = "MIT"}
 
+[tool.setuptools.packages.find]
+namespaces = false
+
 [tool.pdm]
 package-type = "library"
 
