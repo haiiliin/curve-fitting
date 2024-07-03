@@ -223,3 +223,6 @@ class OptimizerResult(HashableBaseModelIO, extra="allow"):
     fitness: Dict[str, Dict[str, float]] = {}
     #: weights for all experiments and lines
     weights: Dict[str, Dict[str, float]] = {}
+
+    f_prediction: List[float] = []
+    f_observation: List[float] = []

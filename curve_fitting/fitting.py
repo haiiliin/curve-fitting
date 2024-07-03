@@ -85,5 +85,11 @@ def curve_fitting(
     result.optimizeKeys = [str(key) for key in keys]
     result.parameters = {key: result.x[idx] for idx, key in enumerate(keys)}
 
+    expr = sp.sympify(equation)
+    func = sp.lambdify(list(expr.free_symbols), expr, "numpy")
+    data = {**xs, **dict(zip(keys, result.x))}
+    result.f_prediction = np.asarray(func(**data)).tolist()
+    result.f_observation = np.asarray(f).tolist()
+
     print(f"Optimized parameters: {result.parameters}")
     return result
